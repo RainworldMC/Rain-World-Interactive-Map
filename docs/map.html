@@ -17,6 +17,7 @@
     <script src="./beziero.js"></script>
 
     <link rel="stylesheet" href="./rw.css" />
+    <link rel="stylesheet" href="./room-effects.css" />
     <style id="mapstyle">
         body, html {
             height: 100%;
@@ -581,6 +582,7 @@
                     weight: 0
                 });
             focusedRoom = e;
+            if (window.roomEffects) window.roomEffects.select(e, region);
             console.log(focusedRoom.feature.properties.name + " focused")
             map.fitBounds(e.getBounds());
             updateHilight(); // might not move
@@ -608,6 +610,7 @@
                     weight: 0
                 });
             focusedRoom = null;
+            if (window.roomEffects) window.roomEffects.select(null);
 
             room = null;
             pushState(true); // no navigation so no zoom change
@@ -668,6 +671,7 @@
             console.log("LOADING REGION " + region + " modded? " + modded);
             var folderpath = 'tiles/' + (modded ? 'modded' : 'vanilla') + '/' + region + '/';
             getJsonObject(folderpath + "region.json", function (json) {
+                if (window.roomEffects) window.roomEffects.select(null);
                 // Background color
                 map.getContainer().style.backgroundColor = 'rgb(' + json["bgcolor"].join(',') + ')'; // I hate this with passion, but such is the way of the CSS
 
@@ -825,5 +829,6 @@
         }
 
     </script>
+    <script src="./room-effects.js"></script>
 </body>
 </html>

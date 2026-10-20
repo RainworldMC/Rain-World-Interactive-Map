@@ -159,6 +159,7 @@ for entry in os.scandir(screenshots_root):
                     geometry=geojson.Polygon([coords,]), # poly expect a list containing a list of coords for each continuous edge
                     properties={
                         "name":roomname,
+                        "room_origin":roomcoords.round(3).tolist(),
                         "popupcoords":popupcoords
                     }))
 
