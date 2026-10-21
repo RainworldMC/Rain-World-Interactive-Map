@@ -78,7 +78,7 @@ button.rw-ui.effects-hide-toggle[hidden] {
     content: '\25B8';
     position: absolute;
     left: 0;
-    top: 4px;
+    top: 2px;
     width: 1em;
     text-align: center;
     color: var(--effects-muted);
@@ -137,7 +137,7 @@ button.rw-ui.effects-hide-toggle[hidden] {
 
 .effects-header::before {
     left: 6px;
-    top: 8px;
+    top: 6px;
 }
 
 .effects-header::after {
@@ -470,7 +470,7 @@ button.rw-ui.effects-type-toggle {
 }
 
 .effect-card summary::before {
-    top: 8px;
+    top: 4px;
 }
 
 .effects-drag-handle {
