@@ -5,12 +5,12 @@
     <meta charset="ISO-8859-1">
     <title>Rain World Interactive Map</title>
 
-    <meta property="og:image" content="https://avatars0.githubusercontent.com/u/7621953?s=400&amp;v=4" />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/259985150?s=400&v=4" />
     <meta property="og:site_name" content="GitHub" />
     <meta property="og:type" content="object" />
     <meta property="og:title" content="Rain World Interactive Map" />
-    <meta property="og:url" content="https://henpemaz.github.io/Rain-World-Interactive-Map/index.html" />
-    <meta property="og:description" content="A Rain World interactive map using leaflet and GeoJSON data exported from the game files. - henpemaz/Rain-World-Interactive-Map" />
+    <meta property="og:url" content="https://rainworldmc.github.io/Rain-World-Interactive-Map/index.html" />
+    <meta property="og:description" content="A Rain World interactive map using leaflet and GeoJSON data exported from the game files. - RainworldMC/Rain-World-Interactive-Map - fork of henpemaz/Rain-World-Interactive-Map" />
 
     <link rel="stylesheet" href="./leaflet/leaflet.css" />
     <script src="./leaflet/leaflet.js"></script>
@@ -193,7 +193,7 @@
         </div>
         <br>
         <div style="padding-left: 8px; padding-bottom: 8px;">
-            <a href="https://rain-world-map.github.io/">Downpour DLC🔗</a>
+            <a href="https://rainworldmc.github.io/rain-world-map-downpour">Downpour DLC🔗</a>
         </div>
         
         <form name="regionselect" id="region-select" class="scroll-ish"></form>
@@ -582,9 +582,9 @@
                     weight: 0
                 });
             focusedRoom = e;
-            if (window.roomEffects) window.roomEffects.select(e, region);
             console.log(focusedRoom.feature.properties.name + " focused")
             map.fitBounds(e.getBounds());
+            if (window.roomEffects) window.roomEffects.select(e, region);
             updateHilight(); // might not move
             focusedRoom.setStyle(
                 {
@@ -623,7 +623,7 @@
             crs: L.CRS.Simple,
             zoomControl: false,
         });
-        map.attributionControl.setPrefix('Powered by <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &amp <a href="https://github.com/henpemaz" title="Gamedev &amp associated arts enthusiast">Henpemaz</a>')
+        map.attributionControl.setPrefix('Powered by <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>, <a href="https://github.com/RainworldMC" title="Project faithfully recreating Rainworld in Minecraft">RainworldMC</a> &amp <a href="https://github.com/henpemaz" title="Gamedev &amp associated arts enthusiast">Henpemaz</a>')
         map.setView([0, 0], -5);
 
         // Events
