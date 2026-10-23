@@ -5,6 +5,7 @@
     <meta charset="ISO-8859-1">
     <title>Rain World Interactive Map</title>
 
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/259985150?s=400&v=4" />
     <meta property="og:site_name" content="GitHub" />
     <meta property="og:type" content="object" />
@@ -18,11 +19,19 @@
 
     <link rel="stylesheet" href="./rw.css" />
     <link rel="stylesheet" href="./room-effects.css" />
+
+    <meta name="viewport" content="width=1024, shrink-to-fit=no">
+
     <style id="mapstyle">
-        body, html {
+        body,
+        html {
             height: 100%;
+            width: 100%;
             padding: 0;
             margin: 0;
+            overflow: hidden;
+            overflow: clip;
+            overscroll-behavior: none;
         }
 
         #mapid {
@@ -75,7 +84,7 @@
 
         .overlay-label {
             position: relative;
-            width: 150px;
+            width: 100%;
             height: 36px;
             margin-top: 11px;
             margin-bottom: 11px;
@@ -83,7 +92,7 @@
 
         /* UI stuff */
         .side-panel {
-            position: absolute;
+            position: fixed;
             top: 24px;
             max-height: calc(100vh - 54px);
             display: flex;
@@ -195,7 +204,7 @@
         <div style="padding-left: 8px; padding-bottom: 8px;">
             <a href="https://rainworldmc.github.io/rain-world-map-downpour">Downpour DLC🔗</a>
         </div>
-        
+
         <form name="regionselect" id="region-select" class="scroll-ish"></form>
     </div>
 
